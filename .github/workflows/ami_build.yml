@@ -6,9 +6,8 @@ on:
       - master # master 브렌치의 push 이면서
     path:
       - "packer/**" #pakcer / 하위경로에 변화가 있을때 동작하게 한다.
-    workflow_dispatch # 원할때 deploy 할 수 있는 옵션
+  workflow_dispatch # 원할때 deploy 할 수 있는 옵션
 
-    
 jobs:
   packer_build:
     runs-on: ubuntu-latest
