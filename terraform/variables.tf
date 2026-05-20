@@ -8,7 +8,7 @@ variable "desired_capacity" { default = 2 }
 variable "min_size" { default = 1 }
 
 # 최대 ec2의 갯수
-variable "max_size" { default = 5 }
+variable "max_size" { default = 4 }
 
 # 첫번째 가용영역
 variable "avail_zone_1" { default = "ap-northeast-2a" }
