@@ -9,7 +9,9 @@ on:
   workflow_dispatch: # 원할때 deploy 할 수 있는 옵션
 
 jobs:
-  packer_build:
+  packer_build: #job 의 이름은 마음대로 지을 수 있다.
+    
+    # ubuntu 잠시 빌려 작업 하겠다.
     runs-on: ubuntu-latest
     name: "Build AMI with packer & ansible"
     steps:
@@ -32,6 +34,7 @@ jobs:
         run: |
           packer init .
           packer build . 
+        # ./packer/xxx.pkr.hcl 파일을 사용해서 작업수행
         working-directory: ./packer
 
       - name: Setup Terraform # 테라폼 설치
@@ -41,6 +44,7 @@ jobs:
         run: |
           terraform init
           terraform apply --auto-approve
+         # ./terraform 폴더안에서 위의 명령어가 실행 됨 
         working-directory: ./terraform
 
     
