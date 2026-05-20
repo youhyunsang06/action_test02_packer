@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout Repository
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
         
       - name: Aws Configure # aws 인증정보 제공
         uses: aws-actions/configure-aws-credentials@v4
